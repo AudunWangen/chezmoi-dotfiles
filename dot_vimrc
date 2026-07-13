@@ -1,7 +1,7 @@
 set nocompatible
 syntax on
 set number relativenumber
-let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_dark = 'soft'
 colorscheme gruvbox
 "colorscheme desert
 set bg=dark
