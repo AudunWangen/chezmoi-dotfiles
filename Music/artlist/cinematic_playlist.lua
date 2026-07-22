@@ -4,7 +4,7 @@ source_name = ""
 folder_path = ""
 playlist = {}
 current_index = 0
-current_source_name = ""
+last_played_file = ""
 
 function shuffle(tbl)
     for i = #tbl, 2, -1 do
@@ -28,6 +28,14 @@ function build_playlist()
         obs.os_closedir(dir)
     end
     shuffle(playlist)
+
+    -- avoid the last track played before this reshuffle landing first again
+    if #playlist > 1 and playlist[1] == last_played_file then
+        -- swap it with a random other position
+        local swap_with = math.random(2, #playlist)
+        playlist[1], playlist[swap_with] = playlist[swap_with], playlist[1]
+    end
+
     current_index = 0
 end
 
@@ -45,6 +53,7 @@ function play_next()
         obs.obs_data_release(settings)
         obs.obs_source_release(source)
     end
+    last_played_file = playlist[current_index]
 end
 
 function media_ended(cd)
@@ -82,5 +91,5 @@ function script_load(settings)
 end
 
 function script_description()
-    return "Shuffled MP3 playlist using a Media Source. Set the Media Source name and the folder containing your MP3s."
+    return "Shuffled MP3 playlist using a Media Source, no-repeat-until-exhausted. Set the Media Source name and the folder containing your MP3s."
 end
