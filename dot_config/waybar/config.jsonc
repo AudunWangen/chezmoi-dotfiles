@@ -29,6 +29,15 @@
         "default": ""
     }
   },
+  "clock": {
+    "format": "{:%d/%m %H:%M}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "iso8601": true,
+    "calendar": {
+        "mode": "month",
+        "weeks-pos": "right"
+    }
+  },
   "cpu": {
       "format": "{usage}% ",
       "tooltip": false

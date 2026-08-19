@@ -79,7 +79,7 @@ local menu        = "wofi --show drun"
 -- end)
 
 hl.on("hyprland.start", function ()
-	hl.exec_cmd("waybar")
+	hl.exec_cmd("LANG=nb_NO.UTF-8 waybar")
     hl.exec_cmd("hypridle")
 end)
 
