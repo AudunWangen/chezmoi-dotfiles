@@ -21,8 +21,7 @@
   ],
   "hyprland/workspaces": {
     "format": "{name} {icon}",
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "on-click": "hyprctl dispatch 'hl.dsp.focus({workspace = \"m+1\"})'",
     "format-icons": {
         "active": "",
         "urgent": "",
@@ -30,7 +29,7 @@
     }
   },
   "clock": {
-    "format": "{:%d/%m %H:%M}",
+    "format": "{:%A %d/%m %H:%M}",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
       "mode": "month",
