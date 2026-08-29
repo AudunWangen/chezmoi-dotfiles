@@ -299,6 +299,10 @@ hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + I", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
+-- Screenshots
+hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region"))
+hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m output"))
+hl.bind(mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m window"))
 
 -- Move focus with mainMod + HJKL
 hl.bind(mainMod .. " + H",  hl.dsp.focus({ direction = "left" }))
