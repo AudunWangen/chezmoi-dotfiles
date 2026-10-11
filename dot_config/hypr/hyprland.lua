@@ -81,6 +81,7 @@ local menu        = "wofi --show drun"
 hl.on("hyprland.start", function ()
 	hl.exec_cmd("LANG=nb_NO.UTF-8 waybar")
     hl.exec_cmd("hypridle")
+    hl.exec_cmd("hyprpaper")
 end)
 
 -------------------------------
