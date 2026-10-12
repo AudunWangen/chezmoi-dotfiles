@@ -21,7 +21,7 @@
   ],
   "hyprland/workspaces": {
     "format": "{name} {icon}",
-    "on-click": "hyprctl dispatch 'hl.dsp.focus({workspace = \"m+1\"})'",
+    "on-click": "hyprctl dispatch \"hl.dsp.focus({workspace = '1'})\"",
     "format-icons": {
         "active": "",
         "urgent": "",
@@ -47,6 +47,13 @@
       "on-scroll-down": "shift_down",
       "on-click-right": "mode"
     }
+  },
+  "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+          "activated": "",
+          "deactivated": "⏾"
+      }
   },
   "cpu": {
       "format": "{usage}% ",
