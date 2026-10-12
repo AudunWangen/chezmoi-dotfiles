@@ -78,6 +78,16 @@ tooltip {
   color: @bright_yellow;
 }
 
+#idle_inhibitor {
+}
+
+#idle_inhibitor.activated {
+  color: @aqua;
+}
+
+#idle_inhibitor.deactivated {
+}
+
 /* Audio */
 #pulseaudio {
   color: @aqua;
